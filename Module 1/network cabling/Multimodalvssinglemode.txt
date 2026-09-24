@@ -1,0 +1,25 @@
+Single-mode fiber (SMF)
+- Core: ~8-10 µm (cladding 125 µm)
+- Light path: One mode/path, no modal dispersion
+- Light source: Laser (1310 nm / 1550 nm)
+- Distance: Long - 10 km to 100+ km
+- Bandwidth: Very high
+- Attenuation: Low
+- Cost: Fiber cheap, optics/transceivers costly
+- Use: Telecom, WAN, FTTH, undersea cables, campus backbone
+- Jacket color: Often yellow
+
+Multimode fiber (MMF)
+- Core: 50 µm or 62.5 µm (cladding 125 µm)
+- Light path: Many modes/paths, modal dispersion
+- Light source: LED / VCSEL (850 nm / 1300 nm)
+- Distance: Short - typically up to ~300-600 m
+- Bandwidth: Lower than SMF
+- Attenuation: Higher
+- Cost: Cheaper optics/connectors, easier to align
+- Use: Data centers, LAN, inside buildings, short links
+- Jacket color: Orange (OM1/OM2), aqua (OM3/OM4), lime green (OM5)
+
+Simple rule:
+Short distance + cheaper = multimode.
+Long distance + high bandwidth = single-mode.
