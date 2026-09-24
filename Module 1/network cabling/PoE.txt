@@ -1,0 +1,54 @@
+Power over Ethernet (PoE)
+- Definition: Sends both data and electrical power over a single Ethernet cable.
+- Common cable: Cat5e or better (Cat6/6a for higher power).
+- Standard: IEEE 802.3af, 802.3at, 802.3bt.
+- PSE (Power Sourcing Equipment): Supplies power (PoE switch or injector).
+- PD (Powered Device): Receives power (camera, phone, AP, etc.).
+- Voltage: About 44-57 V DC.
+- Max distance: 100 m (328 ft) per Ethernet standard.
+- Pairs used: 2 pairs for lower power, 4 pairs for higher power.
+
+Power levels:
+- PoE (802.3af): up to 15.4 W at PSE, about 12.95 W at PD.
+- PoE+ (802.3at): up to 30 W at PSE, about 25.5 W at PD.
+- PoE++ / 4PPoE (802.3bt Type 3): up to 60 W at PSE, about 51 W at PD.
+- PoE++ (802.3bt Type 4): up to 90 W at PSE, about 71.3 W at PD.
+
+How it works:
+- PSE detects a valid PD before sending full power.
+- PSE classifies the PD to know how much power to allocate.
+- Power and data travel together on the same cable.
+- Power is negotiated and monitored.
+
+Benefits:
+- One cable for data + power.
+- No separate AC outlet needed.
+- Easy installation and relocation.
+- Central power management and remote reboot.
+- Safer than running separate power lines in many cases.
+
+Limitations:
+- 100 m distance limit.
+- Limited power budget per switch/port.
+- Heat and cable quality matter at higher power.
+- PoE switches/injectors cost more than normal switches.
+- Not all devices support PoE.
+
+Common uses:
+- IP cameras
+- VoIP phones
+- Wireless access points (APs)
+- Access control systems
+- IoT sensors
+- LED lighting
+- Digital signage
+
+Common devices:
+- PoE switch
+- Midspan injector
+- PoE splitter
+- PoE extender
+
+Simple rule:
+Need data + power over one Ethernet cable within 100 m = PoE.
+Check the PoE standard and power budget before connecting the device.
