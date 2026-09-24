@@ -1,0 +1,39 @@
+Spine-Leaf Topology (Data Center)
+- Also called Leaf-Spine or Clos network.
+- Two-layer architecture:
+  - Spine layer: backbone/core switches.
+  - Leaf layer: access switches connecting servers, storage, firewalls.
+- Rule: Every leaf connects to every spine.
+- Rule: Leaf switches do NOT connect to other leafs.
+- Rule: Spine switches do NOT connect to other spines.
+- Path: Server -> Leaf -> Spine -> Leaf -> Server (usually 2 hops).
+- All links are equal cost; use ECMP (Equal-Cost Multi-Path) for load balancing.
+- Usually Layer 3 (routed) from leaf to spine, often with BGP (Border Gateway Protocol).
+- Overlay: VXLAN (Virtual Extensible LAN) + EVPN (Ethernet VPN) for L2 over L3.
+- Non-blocking: if every leaf connects to every spine with same bandwidth, full bisectional bandwidth.
+- Oversubscription: ratio of downlink (server) to uplink (spine) bandwidth. Lower is better.
+- Redundancy: if one spine fails, traffic uses other spines. If one link fails, ECMP reroutes.
+- Scalability: add leafs for more servers; add spines for more bandwidth.
+- Latency: predictable, fixed number of hops.
+- Traffic: optimized for East-West (server-to-server) traffic.
+- Use cases: data centers, cloud, AI/ML clusters, enterprise DC.
+
+Benefits:
+- Low latency, high bandwidth.
+- Easy to scale out.
+- No spanning tree loops (because Layer 3).
+- Good for virtualization and distributed apps.
+
+Limitations:
+- Cabling complexity (full mesh).
+- Spine port count limits scale.
+- Requires good IP routing and automation.
+- More expensive than small traditional networks.
+
+Simple analogy:
+- Leaf = local road/on-ramp.
+- Spine = highway.
+- To go from one local road to another, you get on the highway, then exit. You never drive directly between local roads.
+
+Simple rule:
+Every leaf talks to every spine. No leaf-to-leaf, no spine-to-spine. Add leafs for ports, add spines for bandwidth. Use ECMP and Layer 3. That is spine-leaf.
