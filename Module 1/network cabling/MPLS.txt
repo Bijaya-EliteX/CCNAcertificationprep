@@ -1,0 +1,31 @@
+MPLS (Multiprotocol Label Switching): A smart way to send packets using short labels instead of full IP addresses.
+
+Normal IP (Internet Protocol) routing: Every router reads the full destination IP and checks a big routing table.
+
+MPLS idea: The first router puts a short label on the packet.
+
+First router / LER (Label Edge Router): It classifies the packet into a FEC (Forwarding Equivalence Class) — like “all traffic for this VPN (Virtual Private Network)”.
+
+Core routers / LSR (Label Switch Router): They don’t read the full IP. They just look at the label and forward it.
+
+Label swap: Each core router may swap the old label for a new one.
+
+LFIB (Label Forwarding Information Base): The table core routers use to map incoming labels to outgoing labels.
+
+LSP (Label Switched Path): The whole pre-planned path the labeled packet follows.
+
+Label stack: You can have more than one label:
+
+Outer label = main path to the far-end router
+
+Inner label = customer VPN (Virtual Private Network) identifier
+
+Who gives labels: Protocols like LDP (Label Distribution Protocol), RSVP-TE (Resource Reservation Protocol – Traffic Engineering), BGP (Border Gateway Protocol), or SR-MPLS (Segment Routing with MPLS).
+
+PHP (Penultimate Hop Popping): Often the second-to-last router removes the outer label to make life easier for the last router.
+
+Last router / egress PE (Provider Edge): It removes the label and delivers the packet normally using IP.
+
+Why use it: Traffic engineering, VPNs (Virtual Private Networks), QoS (Quality of Service), and quick failover.
+
+Important: MPLS is not encryption. It’s just a smart forwarding method.
