@@ -1,0 +1,46 @@
+Cisco Packet Tracer - Common Cabling Issues & Troubleshooting
+
+Common cabling issues:
+- Wrong cable type: straight-through vs crossover vs rollover.
+- Using rollover (console) cable for Ethernet data.
+- Using copper cable where fiber is required, or wrong fiber connector.
+- Serial cable DCE/DTE mismatch, or missing clock rate on DCE side.
+- Wrong port: console, aux, FastEthernet, GigabitEthernet, Serial, Fiber.
+- Interface shutdown (no shutdown missing).
+- Speed/duplex mismatch.
+- VLAN/trunk mismatch on switch-to-switch links.
+- Bad or deleted cable/link in topology.
+- Wrong device type or missing module/port.
+
+Cable type quick guide:
+- Straight-through: PC to switch, router to switch, switch to hub.
+- Crossover: PC to PC, switch to switch, router to router, PC to router.
+- Rollover: PC to console port of router/switch.
+- Serial: router to router (WAN), one side DCE, one side DTE.
+- Fiber: fiber ports, long distance switch-to-switch or router-to-switch.
+
+Troubleshooting steps in Packet Tracer:
+1. Check link lights: green = up, amber/red = down or blocked.
+2. Hover/click cable to verify cable type and connected ports.
+3. Use Inspect tool to check interface status.
+4. On CLI: show interfaces, show ip interface brief.
+5. Check no shutdown on interfaces.
+6. Verify IP address, subnet mask, default gateway.
+7. For serial: check DCE/DTE and add clock rate on DCE.
+8. For switches: check VLAN, trunk, and port mode.
+9. Delete and reconnect cable to fix bad link.
+10. Use ping and tracert to test connectivity.
+11. Use Simulation mode to see where packet is dropped.
+
+Common fixes:
+- Replace wrong cable with correct type.
+- Use correct port and module.
+- Enter no shutdown on interface.
+- Add clock rate on serial DCE interface.
+- Match speed/duplex or set to auto.
+- Configure VLAN/trunk correctly.
+- Re-add device module if port missing.
+
+Simple rule:
+If link light is red/amber, check cable type and port first.
+If link is green but no ping, check IP, VLAN, shutdown, and routing.
