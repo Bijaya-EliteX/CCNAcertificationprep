@@ -1,0 +1,39 @@
+==========================================================
+   SUBNETTING: IP EFFICIENCY (CONCISE)
+==========================================================
+
+WITHOUT SUBNETTING (Classful)
+-----------------------------
+  Need 500 hosts -> must take Class B (/16)
+  Class B usable = 65,534
+  Waste = 65,534 - 500 = 65,034
+  Efficiency = 0.76%
+
+WITH SUBNETTING (Classless / VLSM)
+----------------------------------
+  Base: 192.168.1.0/24 (256 addresses)
+
+  Need: 100, 50, 20, 10 hosts
+
+  Allocate:
+    /25 -> 126 usable  (for 100)
+    /26 ->  62 usable  (for  50)
+    /27 ->  30 usable  (for  20)
+    /28 ->  14 usable  (for  10)
+
+  Total usable = 126 + 62 + 30 + 14 = 232
+  Total needed = 180
+  Total addresses used = 240 of 256
+  Waste = 76 (vs 844 without subnetting)
+
+POINT-TO-POINT LINK
+-------------------
+  /30 -> 2 usable  (perfect for router-to-router)
+  /24 -> 254 usable (waste 252)
+
+SUMMARY
+-------
+  Subnetting matches block size to host requirement.
+  VLSM = different subnet sizes in same network.
+  Result: minimal waste, maximum efficiency.
+==========================================================
