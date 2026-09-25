@@ -1,0 +1,24 @@
+========================================
+              A P I P A
+   Automatic Private IP Addressing
+========================================
+
+  * Range : 169.254.0.0  -  169.254.255.255
+  * Mask  : 255.255.0.0  (/16)
+  * When  : DHCP server fails or not reachable
+  * Scope : Local network only (no internet, no gateway)
+  * Also called: Link-local address, self-assigned IP
+
+  Windows : Shows as 169.254.x.x in ipconfig
+  Linux   : Same range, handled by avahi-autoipd or NetworkManager
+
+  What it means:
+  Your PC gave itself a temporary local IP because DHCP didn't respond.
+
+  Quick fix:
+  1. Check cable / Wi-Fi
+  2. Restart router or DHCP server
+  3. ipconfig /release  then  ipconfig /renew
+  4. If still 169.254.x.x, DHCP is not reaching the device
+
+========================================
