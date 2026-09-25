@@ -1,0 +1,48 @@
+==========================================================
+        BROADCAST vs UNICAST  &  SUBNETTING BASICS
+==========================================================
+
+  BROADCASTS
+  ----------
+   * Limited to LOCAL networks only
+   * Cannot cross router boundaries
+   * Reason: they don't travel across the internet
+   * Used for local tasks (like DHCP discovery, ARP)
+
+----------------------------------------------------------
+
+  UNICAST (The Internet's Main Method)
+  ------------------------------------
+   * Data sent directly from ONE device to ANOTHER
+   * Uses specific IP addresses
+   * Routers forward unicast packets using routing tables
+   * Efficiently directs traffic across multiple networks
+
+----------------------------------------------------------
+
+  DHCP RELAY (Router Role)
+  ------------------------
+   * Router converts client BROADCAST -> UNICAST
+   * Sends it to DHCP servers on different subnets
+   * Result: broadcasts stay local, DHCP still works
+
+----------------------------------------------------------
+
+  SUBNETTING
+  ----------
+   * Divides a large network (e.g. /16 mask)
+     into multiple smaller subnets
+   * Benefits:
+       - Better management
+       - Better segmentation
+       - Cleaner traffic control
+
+----------------------------------------------------------
+
+  KEY TAKEAWAY
+  ------------
+   Broadcasts  ->  help with LOCAL network tasks
+   Unicast     ->  powers INTERNET-wide communication
+                   (targeted + routed)
+
+==========================================================
